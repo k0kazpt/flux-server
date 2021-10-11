@@ -1,2 +1,1 @@
-# flux-server
-Flux conf example repo
+# flux-dev

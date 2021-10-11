@@ -1,0 +1,168 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx
+spec:
+  type: ClusterIP
+  selector:
+    app: nginx
+  ports:
+    - name: http
+      port: 80
+      targetPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: httpbinservice
+spec:
+  type: ClusterIP
+  selector:
+    app: httpbinservice
+  ports:
+    - name: http
+      port: 90
+      targetPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata: # kpt-merge: /emailservice
+  name: emailservice
+spec:
+  type: ClusterIP
+  selector:
+    app: emailservice
+  ports:
+    - name: grpc
+      port: 5000
+      targetPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata: # kpt-merge: /checkoutservice
+  name: checkoutservice
+spec:
+  type: ClusterIP
+  selector:
+    app: checkoutservice
+  ports:
+    - name: grpc
+      port: 5050
+      targetPort: 5050
+---
+apiVersion: v1
+kind: Service
+metadata: # kpt-merge: /recommendationservice
+  name: recommendationservice
+spec:
+  type: ClusterIP
+  selector:
+    app: recommendationservice
+  ports:
+    - name: grpc
+      port: 8080
+      targetPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata: # kpt-merge: /frontend
+  name: frontend
+spec:
+  type: ClusterIP
+  selector:
+    app: frontend
+  ports:
+    - name: http
+      port: 80
+      targetPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata: # kpt-merge: /paymentservice
+  name: paymentservice
+spec:
+  type: ClusterIP
+  selector:
+    app: paymentservice
+  ports:
+    - name: grpc
+      port: 50051
+      targetPort: 50051
+---
+apiVersion: v1
+kind: Service
+metadata: # kpt-merge: /productcatalogservice
+  name: productcatalogservice
+spec:
+  type: ClusterIP
+  selector:
+    app: productcatalogservice
+  ports:
+    - name: grpc
+      port: 3550
+      targetPort: 3550
+---
+apiVersion: v1
+kind: Service
+metadata: # kpt-merge: /cartservice
+  name: cartservice
+spec:
+  type: ClusterIP
+  selector:
+    app: cartservice
+  ports:
+    - name: grpc
+      port: 7070
+      targetPort: 7070
+---
+apiVersion: v1
+kind: Service
+metadata: # kpt-merge: /currencyservice
+  name: currencyservice
+spec:
+  type: ClusterIP
+  selector:
+    app: currencyservice
+  ports:
+    - name: grpc
+      port: 7000
+      targetPort: 7000
+---
+apiVersion: v1
+kind: Service
+metadata: # kpt-merge: /shippingservice
+  name: shippingservice
+spec:
+  type: ClusterIP
+  selector:
+    app: shippingservice
+  ports:
+    - name: grpc
+      port: 50051
+      targetPort: 50051
+---
+apiVersion: v1
+kind: Service
+metadata: # kpt-merge: /redis-cart
+  name: redis-cart
+spec:
+  type: ClusterIP
+  selector:
+    app: redis-cart
+  ports:
+    - name: redis
+      port: 6379
+      targetPort: 6379
+---
+apiVersion: v1
+kind: Service
+metadata: # kpt-merge: /adservice
+  name: adservice
+spec:
+  type: ClusterIP
+  selector:
+    app: adservice
+  ports:
+    - name: grpc
+      port: 9555
+      targetPort: 9555

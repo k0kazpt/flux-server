@@ -1,0 +1,9 @@
+apiVersion: networking.gke.io/v1beta1
+kind: FrontendConfig
+metadata:
+  name: gke-frontend-config
+  namespace: istio-system
+spec:
+  redirectToHttps:
+    enabled: true
+    responseCodeName: "301"
